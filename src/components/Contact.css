@@ -1,0 +1,67 @@
+/* Component enclosing tag */
+.Contact {
+    --spacing: 8px;
+    --spacing-xs: calc(var(--spacing) / 2);
+    --spacing-xl: calc(var(--spacing) * 2);
+
+    --dark: #555;
+    --grey: #aaa;
+    --light: #eee;
+    --active: #aed581;
+    --inactive: #f4511e;
+
+    --card-width: 220px;
+
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xl);
+    background: var(--dark);
+    width: var(--card-width);
+}
+  
+/* Contact image */
+.Contact .avatar {
+    --avatar-size:48px;
+    clip-path: circle(calc(var(--avatar-size) / 2));
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    margin-right: var(--spacing-xl);
+}
+  
+/* Name */
+.Contact .name {
+    margin-bottom: var(--spacing-xs);
+    color: var(--light);
+    font-weight: bold;
+}
+  
+.Contact .status {
+    display: flex;
+    align-items: center;
+}
+
+/* Status text */
+.Contact .status .status-text {
+    color: var(--grey);
+}
+  
+/* Status (rounded&colored indicator) */
+.Contact .status .status-online,
+.Contact .status .status-offline {
+    --status-size: 8px;
+    border-radius: var(--status-size);
+    width: var(--status-size);
+    height: var(--status-size);
+    margin-right: var(--spacing);
+
+    background-color: var(--status-color);
+    box-shadow: 0 0 var(--spacing-xs) var(--status-color);
+}
+  
+.Contact .status .status-online {
+    --status-color : var(--active);
+}
+  
+.Contact .status .status-offline {
+    --status-color : var(--inactive);
+}
